@@ -9,3 +9,9 @@
     width: 100% !important;
     max-width: 600px !important; /* Limite la largeur maximale du formulaire */
 }
+
+h6{
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 100 !important;
+}
