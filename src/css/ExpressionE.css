@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+ 
+}
+
+.form {
+    width: 100%;
+    max-width: 600px; /* Limite la largeur maximale du formulaire */
+}
