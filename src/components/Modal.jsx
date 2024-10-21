@@ -32,7 +32,7 @@ function Modal() {
       // Attendre un moment avant de rediriger
       setTimeout(() => {
         setOpen(false); // Fermer la boîte de dialogue
-        navigate('/tcf-canada/expression-ecrite'); // Rediriger vers ExpressionE
+        navigate('/accueil/examen'); // Rediriger vers ExpressionE
       }, 2000);
     }
   };

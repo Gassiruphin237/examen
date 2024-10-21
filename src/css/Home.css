@@ -1,0 +1,26 @@
+.container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+}
+.img{
+    width: 300px !important;
+}
+.row {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.tcf {
+    width: auto;
+    /* border: 1px solid red; */
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+}

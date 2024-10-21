@@ -1,11 +1,11 @@
-.container {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
+#container {
+    display: flex !important;
+    justify-content: center !important; /* Centre horizontalement */
+    align-items: center !important; /* Centre verticalement */
  
 }
 
 .form {
-    width: 100%;
-    max-width: 600px; /* Limite la largeur maximale du formulaire */
+    width: 100% !important;
+    max-width: 600px !important; /* Limite la largeur maximale du formulaire */
 }

@@ -1,5 +1,6 @@
 import  Modal  from './components/Modal';
 import './App.css';
+import Home from './components/Home';
 // import ExpressionE from './components/ExpressionE';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <>
     <Modal/>
     {/* <ExpressionE/> */}
+  
     </>
   );
 }
