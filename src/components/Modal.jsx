@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { Dialog, DialogTitle, DialogContent, TextField, DialogActions, Button, Alert, Backdrop } from '@mui/material';
-import { useNavigate } from 'react-router-dom'; // Importer useNavigate
+import { useNavigate } from 'react-router-dom';
+import usersData from './users.json'; // Assurez-vous d'ajuster le chemin
 
 function Modal() {
-  const [open, setOpen] = useState(true); // La boîte de dialogue s'ouvre directement
-  const [identifiant, setIdentifiant] = useState(''); // État pour stocker l'identifiant
-  const [motDePasse, setMotDePasse] = useState(''); // État pour stocker le mot de passe
-  const [errorMessage, setErrorMessage] = useState(''); // Message d'erreur pour identifiant ou mot de passe incorrect
-  const [successMessage, setSuccessMessage] = useState(''); // Message de succès pour connexion réussie
-  const navigate = useNavigate(); // Utiliser useNavigate pour la redirection
+  const [open, setOpen] = useState(true);
+  const [identifiant, setIdentifiant] = useState('');
+  const [motDePasse, setMotDePasse] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleClose = (event, reason) => {
-    // Empêcher la fermeture en cliquant en dehors
     if (reason && reason === 'backdropClick') {
       return;
     }
@@ -19,20 +19,20 @@ function Modal() {
   };
 
   const handleSubmit = () => {
-    const identifiantCorrect = 'tcfxxx';
-    const motDePasseCorrect = 'Gamesca12x@.3';
+    const user = usersData.users.find(
+      (user) => user.identifiant === identifiant && user.password === motDePasse
+    );
 
-    if (identifiant !== identifiantCorrect || motDePasse !== motDePasseCorrect) {
-      setErrorMessage('Identifiant ou mot de passe incorrect'); // Afficher un message d'erreur
-      setSuccessMessage(''); // Réinitialiser le message de succès
+    if (!user) {
+      setErrorMessage('Identifiant ou mot de passe incorrect');
+      setSuccessMessage('');
     } else {
-      setErrorMessage(''); // Réinitialiser le message d'erreur
-      setSuccessMessage('Connexion réussie !'); // Afficher le message de succès
+      setErrorMessage('');
+      setSuccessMessage('Connexion réussie !');
 
-      // Attendre un moment avant de rediriger
       setTimeout(() => {
-        setOpen(false); // Fermer la boîte de dialogue
-        navigate('/accueil/examen'); // Rediriger vers ExpressionE
+        setOpen(false);
+        navigate('/accueil/examen');
       }, 2000);
     }
   };

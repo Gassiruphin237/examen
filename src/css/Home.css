@@ -15,6 +15,7 @@
     gap: 3px;
     cursor: pointer;
     font-weight: 700;
+    margin: 20px !important;
 }
 
 .tcf {

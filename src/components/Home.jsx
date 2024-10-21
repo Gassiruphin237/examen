@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import '../css/Home.css';
 import { InputLabel, MenuItem, Select } from '@mui/material';
+import img from '../assets/undraw_My_code_snippets_re_4adu.png'
 
 function Home() {
   const [selectedValue, setSelectedValue] = useState(''); // Gérer la sélection
@@ -12,13 +13,13 @@ function Home() {
   const handleChange = (event) => {
     const value = event.target.value;
     setSelectedValue(value);
-    
+
     // Redirige vers la page de login après la sélection
     if (value === 1) {
       navigate('/tcf-canada/expression-ecrite');
     } else if (value === 2) {
       alert("cette partie est en maintenance")
-      event.target.value=''
+      event.target.value = ''
     } else {
       navigate('/error');
     }
@@ -28,7 +29,10 @@ function Home() {
     <div className="container text-center">
       <Outlet context={{ isAuthenticated, setIsAuthenticated }} />
       <div className="row">
-        <InputLabel id="demo-simple-select-label">Choisissez votre Examen</InputLabel>
+      <center>
+        <img alt='img' src={img} style={{ width: '300px', borderRadius: 20 }} />
+      </center>
+        <InputLabel id="demo-simple-select-label">Choisissez votre Examen</InputLabel><br />
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"

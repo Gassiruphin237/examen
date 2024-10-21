@@ -15,6 +15,15 @@ function ExpressionE() {
     const [wordCounts, setWordCounts] = useState({ wordCount1: 0, wordCount2: 0, wordCount3: 0 });
     const [selectedSubject, setSelectedSubject] = useState(0); // Pour gérer la sélection du sujet
 
+
+    const formatTextWithLineBreaks = (text) => {
+        return text.split('\n').map((line, index) => (
+            <React.Fragment key={index}>
+                {line}
+                <br />
+            </React.Fragment>
+        ));
+    };
     // Gérer les changements de texte
     const handleTextChange = (e, task) => {
         const text = e.target.value.trim();
@@ -62,7 +71,7 @@ function ExpressionE() {
         doc.setFontSize(12);
 
         tasksData.subjects[selectedSubject].tasks.forEach((task, index) => {
-            if (index > 0) doc.addPage(); 
+            if (index > 0) doc.addPage();
             doc.setFont('Helvetica', 'bold');
             doc.text(`Tâche ${index + 1}:`, 10, 10);
             doc.setFont('Helvetica', 'normal');
@@ -90,10 +99,10 @@ function ExpressionE() {
             <form className='form' style={{ margin: '20px' }}>
                 <center>
                     <img alt='img' src={img} style={{ width: '300px', borderRadius: 20 }} />
-                </center>
+                </center>  <br />
                 <p style={{ textAlign: 'center' }}>
                     <h3>Simulateur Examen Expression Ecrite TCF Canada</h3>
-                </p>
+                </p>  <br />
                 <p>Temps restant : <Chip label={formatTime(timeLeft)} color="error" /></p>
 
                 {/* Sélection de sujet */}
@@ -116,7 +125,7 @@ function ExpressionE() {
                 {/* Tâche 1 */}
                 <h6>{tasksData.subjects[selectedSubject].tasks.task1}</h6>
                 <TextField
-                    label={tasksData.subjects[selectedSubject].tasks.task1}
+                    label="Tâche 1"
                     multiline
                     rows={4}
                     variant="outlined"
@@ -131,7 +140,7 @@ function ExpressionE() {
                 {/* Tâche 2 */}
                 <h6>{tasksData.subjects[selectedSubject].tasks.task2}</h6>
                 <TextField
-                    label={tasksData.subjects[selectedSubject].tasks.task2}
+                    label="Tâche 2"
                     multiline
                     rows={4}
                     variant="outlined"
@@ -144,9 +153,16 @@ function ExpressionE() {
                 <p>Nombre de mots : <Badge badgeContent={wordCounts.wordCount2} max={999} color="primary" /></p>
 
                 {/* Tâche 3 */}
-                <h6>{tasksData.subjects[selectedSubject].tasks.task3}</h6>
+                <h6>
+                    {tasksData.subjects[selectedSubject].tasks.task3.split('\n').map((line, index) => (
+                        <span key={index}>
+                            {line}
+                            <br />
+                        </span>
+                    ))}
+                </h6>
                 <TextField
-                    label={tasksData.subjects[selectedSubject].tasks.task3}
+                    label="Tâche 3"
                     multiline
                     rows={4}
                     variant="outlined"

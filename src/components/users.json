@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "identifiant": "Gamaesca",
+            "password": "Estelle@2024."
+        },
+        {
+            "identifiant": "Gamaescaromuald",
+            "password": "Ndengue@2024!R"
+        },
+        {
+            "identifiant": "Gamaescadongmo",
+            "password": "Laurelle@2024!e"
+        },
+        {
+            "identifiant": "GamaescaSorelle",
+            "password": "Sorelle@2024!L"
+        },
+        {
+            "identifiant": "GamaescaBleriotte",
+            "password": "Bleriotte@2024!e"
+        },
+        {
+            "identifiant": "Galactee",
+            "password": "Mariehelene"
+        }
+    ]
+}

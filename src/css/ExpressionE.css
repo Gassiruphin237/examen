@@ -14,4 +14,6 @@ h6{
     font-size: 13px;
     font-style: italic;
     font-weight: 100 !important;
+    white-space: pre-wrap;
+    text-align:justify;
 }

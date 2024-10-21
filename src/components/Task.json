@@ -5,9 +5,10 @@
         "tasks": {
           "task1": "Écrivez un message à votre ami qui a accepté de s’occuper de votre maison et de votre jardin pendant votre absence pour lui dire ce qu’il doit faire.",
           "task2": "Envoyez une réclamation par courrier à une agence de voyage pour exprimer votre mécontentement suite à un voyage mal organisé.",
-          "task3": "Document 1 : Les restaurants rapides se distinguent par leur engagement à proposer une variété de plats équilibrés, respectant strictement les normes d’hygiène. En laissant aux clients la liberté de composer leur propre menu, ces établissements les responsabilisent dans leurs choix alimentaires, tout en satisfaisant leurs préférences gustatives. Document 2 : Les spécialistes affirment que manger régulièrement dans des restaurants de fast-food, qui proposent de la restauration rapide, est dangereux pour la santé. La nourriture servie est souvent la même : frites, hamburgers et boissons sucrées. Ces aliments contiennent une grande quantité de calories, bien trop pour un seul repas. De plus, la plupart des produits dans ces restaurants sont emballés dans du plastique. Par conséquent, manger dans un fast-food augmente la production de déchets plastiques, ce qui est nuisible pour l’environnement"
+          "task3": "Document 1 : Les restaurants rapides se distinguent par leur engagement à proposer une variété de plats équilibrés, respectant strictement les normes d’hygiène. En laissant aux clients la liberté de composer leur propre menu, ces établissements les responsabilisent dans leurs choix alimentaires, tout en satisfaisant leurs préférences gustatives.\n\nDocument 2 : Les spécialistes affirment que manger régulièrement dans des restaurants de fast-food, qui proposent de la restauration rapide, est dangereux pour la santé. La nourriture servie est souvent la même : frites, hamburgers et boissons sucrées. Ces aliments contiennent une grande quantité de calories, bien trop pour un seul repas. De plus, la plupart des produits dans ces restaurants sont emballés dans du plastique. Par conséquent, manger dans un fast-food augmente la production de déchets plastiques, ce qui est nuisible pour l’environnement."
         }
-      },
+      }
+      ,
       {
         "title": "Sujet 2: La technologie et la vie quotidienne",
         "tasks": {
