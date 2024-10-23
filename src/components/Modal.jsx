@@ -26,6 +26,9 @@ function Modal() {
     if (!user) {
       setErrorMessage('Identifiant ou mot de passe incorrect');
       setSuccessMessage('');
+      setTimeout(() => {
+        setErrorMessage(false)
+      }, 1000);
     } else {
       setErrorMessage('');
       setSuccessMessage('Connexion réussie !');

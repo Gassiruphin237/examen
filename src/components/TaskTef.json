@@ -1,0 +1,32 @@
+{
+    "subjects": [
+      {
+        "title": "Section 1",
+        "tasks": {
+          "task1": "Voici le début d’un article de presse.\n\n Terminez cet article : \n\n- En ajoutant à la suite un texte de 80 mots minimum \n- En faisant plusieurs paragraphes.\n\nDu sucre sous haute surveillance \n\n Dimanche soir, des clients d’une crêperie de Brest quittent le restaurant après avoir réglé leur addition.\n Quelques minutes plus tard, les jeunes femmes reviennent pour se plaindre, accompagnées de policiers.\n\nÀ la fin de votre rédaction, vérifiez les points suivants pour voir si vous avez bien respecté les consignes : \n\nMon texte fait entre 80 et 150 mots. \n\nJ'ai fait plusieurs paragraphes qui s'enchaînent logiquement. \n\nJ'ai respecté le style du texte : \n\n- Utilisation de la troisième personne du singulier \n- Utilisation du passé (passé composé et imparfait) \n- Ton neutre / descriptif \n\nJ'ai donné des informations et des détails précis. \n\nJe me suis relu(e) et j'ai corrigé mes fautes. ",
+
+          "task2":  "Vous avez lu dans un journal l'affirmation suivante : « Avec l’ordinateur, les enfants n’ont plus besoin d’apprendre à écrire à la main. » \n\nÉcrivez une lettre au journal pour dire ce que vous en pensez (200 mots minimum). \n\n- Développez au moins 3 arguments pour défendre votre point de vue. \n\nÀ la fin de votre rédaction, vérifiez les points suivants pour voir si vous avez bien respecté les consignes : \n\nJ'ai utilisé des mots de liaison pour introduire mes paragraphes et entre mes différentes idées. \n\nJ'ai rédigé une introduction et une conclusion. \n\nJ'ai fait 3 paragraphes distincts qui contiennent chacun un argument différent. \n\nChacun de mes arguments est : introduit avec une phrase, développé et illustré par un exemple. \n\nRédigez votre réponse ci-dessous. \n\nÀ noter : elle sera enregistrée mais pas corrigée par la plateforme.",
+          "task3": "Restauration Rapide, Pour Ou Contre ? \n\n Document 1 : Les restaurants rapides se distinguent par leur engagement à proposer une variété de plats équilibrés, respectant strictement les normes d’hygiène. En laissant aux clients la liberté de composer leur propre menu, ces établissements les responsabilisent dans leurs choix alimentaires, tout en satisfaisant leurs préférences gustatives.\n\nDocument 2 : Les spécialistes affirment que manger régulièrement dans des restaurants de fast-food, qui proposent de la restauration rapide, est dangereux pour la santé. La nourriture servie est souvent la même : frites, hamburgers et boissons sucrées. Ces aliments contiennent une grande quantité de calories, bien trop pour un seul repas. De plus, la plupart des produits dans ces restaurants sont emballés dans du plastique. Par conséquent, manger dans un fast-food augmente la production de déchets plastiques, ce qui est nuisible pour l’environnement."
+        }
+          
+      }
+      ,
+      {
+        "title": "Sujet 2: La technologie et la vie quotidienne",
+        "tasks": {
+          "task1": "Expliquez à votre grand-parent comment utiliser un smartphone pour passer un appel vidéo.",
+          "task2": "Rédigez un article pour un journal local sur les avantages et inconvénients des réseaux sociaux.",
+          "task3": "Est-ce que la technologie rend les gens moins sociables ? Argumentez."
+        }
+      },
+      {
+        "title": "Sujet 3: Les loisirs et le travail",
+        "tasks": {
+          "task1": "Écrivez à votre employeur pour lui demander un congé exceptionnel.",
+          "task2": "Expliquez les bienfaits des loisirs créatifs pour réduire le stress.",
+          "task3": "Peut-on trouver un équilibre entre travail et loisirs ? Discutez."
+        }
+      }
+    ]
+  }
+  

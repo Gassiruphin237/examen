@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import '../css/Home.css';
 import { InputLabel, MenuItem, Select } from '@mui/material';
-import img from '../assets/undraw_My_code_snippets_re_4adu.png'
+import img from '../assets/logo.jfif'
 
 function Home() {
   const [selectedValue, setSelectedValue] = useState(''); // Gérer la sélection
@@ -18,7 +18,7 @@ function Home() {
     if (value === 1) {
       navigate('/tcf-canada/expression-ecrite');
     } else if (value === 2) {
-      alert("cette partie est en maintenance")
+      navigate('/tef-canada/expression-ecrite')
       event.target.value = ''
     } else {
       navigate('/error');
@@ -30,8 +30,8 @@ function Home() {
       <Outlet context={{ isAuthenticated, setIsAuthenticated }} />
       <div className="row">
       <center>
-        <img alt='img' src={img} style={{ width: '300px', borderRadius: 20 }} />
-      </center>
+        <img alt='img' src={img} style={{ width: '160px', borderRadius: '50%' }} />
+      </center><br/>
         <InputLabel id="demo-simple-select-label">Choisissez votre Examen</InputLabel><br />
         <Select
           labelId="demo-simple-select-label"

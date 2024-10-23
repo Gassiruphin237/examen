@@ -4,10 +4,10 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { Outlet } from 'react-router-dom';
 import jsPDF from 'jspdf';
 import '../css/ExpressionE.css';
-import img from '../assets/tcf.jpg';
-import tasksData from './Task.json'; // Importer le fichier JSON
+import img from '../assets/tef.jpg';
+import tasksData from './TaskTef.json'; // Importer le fichier JSON
 
-function ExpressionE() {
+function ExpressionTef() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [timeLeft, setTimeLeft] = useState(3600); // 3600 secondes = 1 heure
     const [disabled, setDisabled] = useState(false);
@@ -53,7 +53,7 @@ function ExpressionE() {
                 } else {
                     clearInterval(timer);
                     setDisabled(true);
-                    saveAsPDF(); // Appeler saveAsPDF avec les tâches dans tasksRef
+                    saveAsPDF(); // Appeler saveAsPDF avec les Sections dans tasksRef
                     return 0;
                 }
             });
@@ -72,55 +72,42 @@ function ExpressionE() {
         const doc = new jsPDF();
         doc.setFontSize(12);
 
-        const tasksToSave = tasksRef.current; // Utiliser tasksRef pour accéder aux tâches mises à jour
+        const tasksToSave = tasksRef.current; // Utiliser tasksRef pour accéder aux Sections mises à jour
 
-        // Comptage des mots pour chaque tâche
+        // Comptage des mots pour chaque Section
         const wordCount1 = countWords(tasksToSave.task1);
         const wordCount2 = countWords(tasksToSave.task2);
         const wordCount3 = countWords(tasksToSave.task3);
 
-        console.log("Tâches au moment de la sauvegarde :", tasksToSave); // Debug: voir les tâches ici
+        console.log("Sections au moment de la sauvegarde :", tasksToSave); // Debug: voir les Sections ici
 
-        // Tâche 1
+        // Section 1
         doc.setFont('Helvetica', 'bold');
-        doc.text('Tâche 1:', 10, 10);
+        doc.text('Section 1:', 10, 10);
         doc.setFont('Helvetica', 'normal');
         const task1Text = tasksToSave.task1 || 'Aucun résultat saisi';
         const task1Lines = doc.splitTextToSize(task1Text, 190);
         doc.text(task1Lines, 10, 20);
 
-        // Afficher le nombre de mots pour la tâche 1
+        // Afficher le nombre de mots pour la Section 1
         doc.text(`Nombre de mots : ${wordCount1}`, 10, 20 + task1Lines.length * 10 + 10);
 
-        doc.addPage(); // Nouvelle page pour la Tâche 2
+        doc.addPage(); // Nouvelle page pour la Section 2
 
-        // Tâche 2
+        // Section 2
         doc.setFont('Helvetica', 'bold');
-        doc.text('Tâche 2:', 10, 10);
+        doc.text('Section 2:', 10, 10);
         doc.setFont('Helvetica', 'normal');
         const task2Text = tasksToSave.task2 || 'Aucun résultat saisi';
         const task2Lines = doc.splitTextToSize(task2Text, 190);
         doc.text(task2Lines, 10, 20);
 
-        // Afficher le nombre de mots pour la tâche 2
-        doc.text(`Nombre de mots : ${wordCount2}`, 10, 20 + task2Lines.length * 10 + 10);
-
-        doc.addPage(); // Nouvelle page pour la Tâche 3
-
-        // Tâche 3
-        doc.setFont('Helvetica', 'bold');
-        doc.text('Tâche 3:', 10, 10);
-        doc.setFont('Helvetica', 'normal');
-        const task3Text = tasksToSave.task3 || 'Aucun résultat saisi';
-        const task3Lines = doc.splitTextToSize(task3Text, 190);
-        doc.text(task3Lines, 10, 20);
-
-        // Afficher le nombre de mots pour la tâche 3
-        doc.text(`Nombre de mots : ${wordCount3}`, 10, 20 + task3Lines.length * 10 + 10);
-
         const random = () => Math.floor(Math.random() * 100) + 1;
         console.log("PDF généré avec succès.");
-        doc.save(`tachesTcf${random()}.pdf`);
+        doc.save(`tachesTef${random()}.pdf`);
+
+
+        // Télécharager le fichier PDF
     };
 
 
@@ -136,7 +123,7 @@ function ExpressionE() {
     const handleSubjectChange = (event) => {
         setSelectedSubject(event.target.value);
         const selectedTasks = tasksData.subjects[event.target.value].tasks;
-        setTasks({ task1: '', task2: '', task3: '' }); // Réinitialiser les tâches lors du changement de sujet
+        setTasks({ task1: '', task2: '', task3: '' }); // Réinitialiser les Sections lors du changement de sujet
         setWordCounts({ wordCount1: 0, wordCount2: 0, wordCount3: 0 });
     };
 
@@ -148,13 +135,21 @@ function ExpressionE() {
                     <img alt='img' src={img} style={{ width: '300px', borderRadius: 20 }} />
                 </center>  <br />
                 <p style={{ textAlign: 'center' }}>
-                    <h3>Simulateur Examen Expression Ecrite TCF Canada</h3>
+                    <h3>Simulateur Examen Expression Ecrite TEF Canada</h3>
                 </p>  <br />
                 <p>Temps restant : <Chip label={formatTime(timeLeft)} color="error" /></p>
-                {/* Tâche 1 */}
-                <h6>{tasksData.subjects[selectedSubject].tasks.task1}</h6>
+                {/* Section 1 */}
+                {/* Tâche 3 */}
+                <h6>
+                    {tasksData.subjects[selectedSubject].tasks.task1.split('\n').map((line, index) => (
+                        <span key={index}>
+                            {line}
+                            <br />
+                        </span>
+                    ))}
+                </h6>
                 <TextField
-                    label="Tâche 1"
+                    label="Section A"
                     multiline
                     rows={4}
                     variant="outlined"
@@ -166,10 +161,10 @@ function ExpressionE() {
                 />
                 <p>Nombre de mots : <Badge badgeContent={wordCounts.wordCount1} max={999} color="primary" /></p>
 
-                {/* Tâche 2 */}
+                {/* Section 2 */}
                 <h6>{tasksData.subjects[selectedSubject].tasks.task2}</h6>
                 <TextField
-                    label="Tâche 2"
+                    label="Section B"
                     multiline
                     rows={4}
                     variant="outlined"
@@ -180,28 +175,6 @@ function ExpressionE() {
                     style={{ marginTop: '20px' }}
                 />
                 <p>Nombre de mots : <Badge badgeContent={wordCounts.wordCount2} max={999} color="primary" /></p>
-
-                {/* Tâche 3 */}
-                <h6>
-                    {tasksData.subjects[selectedSubject].tasks.task3.split('\n').map((line, index) => (
-                        <span key={index}>
-                            {line}
-                            <br />
-                        </span>
-                    ))}
-                </h6>
-                <TextField
-                    label="Tâche 3"
-                    multiline
-                    rows={4}
-                    variant="outlined"
-                    fullWidth
-                    disabled={disabled}
-                    onChange={(e) => handleTextChange(e, 'task3')}
-                    value={tasks.task3}
-                    style={{ marginTop: '20px' }}
-                />
-                <p>Nombre de mots : <Badge badgeContent={wordCounts.wordCount3} max={999} color="primary" /></p>
 
                 <Button
                     variant="contained"
@@ -218,4 +191,4 @@ function ExpressionE() {
     );
 }
 
-export default ExpressionE;
+export default ExpressionTef;

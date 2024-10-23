@@ -8,6 +8,7 @@ import Modal from './components/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthGuard from './components/AuthGuard'; // Importer AuthGuard
 import Home from './components/Home';
+import ExpressionTef from './components/ExpressionTef';
 
 // Exemple temporaire d'authentification (à remplacer par ta logique réelle)
 const isAuthenticated = false; // Mettre à jour cela après la connexion réussie
@@ -19,15 +20,18 @@ const router = createBrowserRouter([
   },
   {
     path: "/accueil/examen",
-    element: <Home />
-    /* <AuthGuard isAuthenticated={isAuthenticated}>
-        <Home />
-      </AuthGuard> }*/
+    element:   <Home />
   },
   {
     path: "/tcf-canada/expression-ecrite",
     element: (
       <ExpressionE />
+    ),
+  },
+  {
+    path: "/tef-canada/expression-ecrite",
+    element: (
+      <ExpressionTef />
     ),
   },
   {
