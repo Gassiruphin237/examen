@@ -20,7 +20,11 @@ function Home() {
     } else if (value === 2) {
       navigate('/tef-canada/expression-ecrite')
       event.target.value = ''
-    } else {
+    }
+   else if (value === 3) {
+    navigate('/tcf-canada/expression-orale')
+    event.target.value = ''
+  } else {
       navigate('/error');
     }
   };
@@ -42,6 +46,7 @@ function Home() {
         >
           <MenuItem value={1}>Tcf Canada</MenuItem>
           <MenuItem value={2}>Tef Canada</MenuItem>
+          <MenuItem value={3}>Expression Orale (TCF-Canada)</MenuItem>
         </Select>
       </div>
     </div>
