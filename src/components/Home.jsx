@@ -10,7 +10,7 @@ function Home() {
   const navigate = useNavigate(); // Hook pour la navigation
 
   // Fonction appelée lorsqu'un élément est sélectionné
-  const handleChange = (event) => { 
+  const handleChange = (event) => {
     const value = event.target.value;
     setSelectedValue(value);
 
